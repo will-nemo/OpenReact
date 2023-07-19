@@ -2,9 +2,14 @@
   "name": "open-react",
   "version": "1.0.0",
   "description": "Open Source React Component Library",
-  "main": "index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "jest"
+    "build": "rollup -c",
+    "test": "jest",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "repository": {
     "type": "git",
@@ -12,6 +17,7 @@
   },
   "keywords": [
     "open",
+    "open-react",
     "source",
     "react",
     "component",
@@ -20,8 +26,34 @@
   "author": "will-nemo",
   "license": "MIT",
   "dependencies": {
+    "@headlessui/react": "^1.7.15"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.22.9",
+    "@babel/preset-react": "^7.22.5",
+    "@babel/preset-typescript": "^7.22.5",
+    "@rollup/plugin-commonjs": "^25.0.3",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-terser": "^0.4.3",
+    "@storybook/addon-essentials": "^7.1.0",
+    "@storybook/addon-interactions": "^7.1.0",
+    "@storybook/addon-links": "^7.1.0",
+    "@storybook/addon-onboarding": "^1.0.7",
+    "@storybook/blocks": "^7.1.0",
+    "@storybook/react": "^7.1.0",
+    "@storybook/react-webpack5": "^7.1.0",
+    "@storybook/testing-library": "^0.2.0",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@types/rollup-plugin-peer-deps-external": "^2.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "rollup": "^2.79.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-typescript2": "^0.35.0",
+    "sass": "^1.63.6",
+    "storybook": "^7.1.0",
     "typescript": "^5.1.6"
   }
 }
