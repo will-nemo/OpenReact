@@ -2,23 +2,8 @@
   "name": "open-react",
   "version": "1.0.0",
   "description": "Open Source React Component Library",
-  "browser": "dist/index.js",
-  "module": "dist/index.es.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "build": "rollup -c",
-    "test": "jest",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/will-nemo/OpenReact.git"
-  },
-  "bugs": {
-    "url": "https://github.com/will-nemo/OpenReact/issues"
-  },
-  "files": ["dist"],
+  "author": "will-nemo",
+  "license": "MIT",
   "homepage": "https://github.com/will-nemo/OpenReact#readme",
   "keywords": [
     "open",
@@ -28,8 +13,26 @@
     "component",
     "library"
   ],
-  "author": "will-nemo",
-  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/will-nemo/OpenReact.git"
+  },
+  "bugs": {
+    "url": "https://github.com/will-nemo/OpenReact/issues"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "test": "jest",
+    "lint": "eslint \"src/**/*.{ts,tsx}\"",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown",
+    "*.{js,ts,tsx}": "eslint --cache --fix",
+    "*.{js,ts,tsx,css,scss,md}": "prettier --write"
+  },
   "dependencies": {
     "@headlessui/react": "^1.7.15"
   },
@@ -52,7 +55,18 @@
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@types/rollup-plugin-peer-deps-external": "^2.2.1",
+    "@typescript-eslint/eslint-plugin": "^6.1.0",
+    "@typescript-eslint/parser": "^6.1.0",
     "css-loader": "^6.8.1",
+    "eslint": "^8.45.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.33.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
+    "prettier": "3.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup": "^2.79.1",
@@ -68,5 +82,11 @@
   "peerDependencies": {
     "react": ">=16",
     "react-dom": ">=16"
-  }
+  },
+  "files": [
+    "dist"
+  ],
+  "browser": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts"
 }
