@@ -20,6 +20,9 @@ yarn-error.log*
 # built site
 /dist
 
+# lint
+.eslintcache
+
 # misc
 .DS_Store
 *.idea
