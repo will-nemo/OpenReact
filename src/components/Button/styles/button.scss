@@ -1,0 +1,25 @@
+@use "sass:math";
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+
+  color: rgb(255 255 math.div(255, 1));
+  background-color: rgb(79 70 math.div(229, 1));
+  box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000;
+  border-color: rgb(229, 231, math.div(235, 1));
+  border-style: solid;
+  box-sizing: border-box;
+
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+
+  &:hover {
+    background-color: rgb(67 56 math.div(202, 1));
+  }
+}

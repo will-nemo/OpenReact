@@ -1,3 +1,5 @@
+import './styles/button.scss';
+
 interface ButtonProps {
   label: string;
 }
@@ -5,7 +7,7 @@ interface ButtonProps {
 const Button = ({ label }: ButtonProps) => {
 
   return (
-    <button>
+    <button className="button">
       {label}
     </button>
   );
