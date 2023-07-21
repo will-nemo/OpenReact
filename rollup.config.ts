@@ -31,7 +31,10 @@ export default {
       include: ['node_modules/**'],
     }),
     json(),
-    scss(),
+    scss({
+      fileName: 'OpenReact.css',
+      sourceMap: false,
+    }),
     terser(),
   ],
 };
