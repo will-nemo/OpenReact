@@ -2,7 +2,6 @@
 **/*.stories.tsx
 *.idea
 storybook.log
-src/
 tsconfig.json
 rollup.config.ts
 .babelrc.json
