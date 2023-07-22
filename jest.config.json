@@ -1,0 +1,16 @@
+{
+  "preset": "ts-jest",
+  "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json"],
+  "rootDir": "src",
+  "transform": {
+    "^.+\\.(css|sass|scss)$": "jest-transform-css"
+  },
+  "moduleNameMapper": {
+    "\\.(css|less|sass|scss)$": "identity-obj-proxy"
+  },
+  "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+  "collectCoverageFrom": ["**/*.(ts|tsx)"],
+  "coverageDirectory": "../coverage",
+  "testEnvironment": "jsdom",
+  "setupFilesAfterEnv": ["@testing-library/jest-dom/extend-expect"]
+}

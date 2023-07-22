@@ -1,5 +1,5 @@
 .storybook/
-**/*.stories.tsx
+**/*.stories.**
 *.idea
 storybook.log
 tsconfig.json
