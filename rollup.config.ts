@@ -5,6 +5,7 @@ import json from '@rollup/plugin-json';
 import scss from 'rollup-plugin-scss';
 import resolve from '@rollup/plugin-node-resolve';
 import terser from '@rollup/plugin-terser';
+import babel from '@rollup/plugin-babel';
 
 export default {
   input: 'src/index.ts',
@@ -24,7 +25,7 @@ export default {
     resolve(),
     typescript({
       rollupCommonJSResolveHack: false,
-      exclude: '**/__tests__/**',
+      exclude: ['**/__tests__/**', '**/*.stories.ts', '**/*.stories.tsx'],
       clean: true,
     }),
     commonjs({
@@ -35,6 +36,7 @@ export default {
       fileName: 'OpenReact.css',
       sourceMap: false,
     }),
+    babel({ babelHelpers: 'bundled' }),
     terser(),
   ],
 };

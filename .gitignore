@@ -19,6 +19,7 @@ yarn-error.log*
 
 # built site
 /dist
+open-react-*.tgz
 
 # lint
 .eslintcache
