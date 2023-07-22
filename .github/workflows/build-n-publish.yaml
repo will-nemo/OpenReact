@@ -1,6 +1,9 @@
-name: Build and Test OpenReact CI
+name: Build and Publish OpenReact CI
 
-on: [pull_request]
+on:
+  push:
+    tags:
+      - v*
 
 jobs:
   build:
@@ -20,3 +23,7 @@ jobs:
         run: npm run build
       - name: Test
         run: npm run test
+      - name: Publish
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
